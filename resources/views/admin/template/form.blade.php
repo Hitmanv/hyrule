@@ -13,7 +13,11 @@
 @section('content')
     <div class="wrapper">
         <form id="form1">
+            <div class="alert alert-success">
+                @{{ result }}
+            </div>
             <div class="panel">
+
                 <div class="panel-heading">
                     自有属性
                     <span class="tools pull-right"><a class="t-collapse fa fa-chevron-down"
@@ -22,9 +26,10 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label>标题</label>
-                        <input type="text" v-model="title" class="form-control">
+                        <input type="text" v-model="form.title" class="form-control">
                     </div>
                 </div>
+
             </div>
             <div class="panel">
                 <div class="panel-heading">
@@ -37,7 +42,7 @@
                         <button class="btn btn-success" type="button" @click="addTag">添加标签</button>
                     </div>
                     <div class="form-group">
-                        <div v-for="tag in tags">
+                        <div v-for="tag in form.tags">
                             @{{ tag.name }}
                         </div>
                     </div>
@@ -65,15 +70,20 @@
         const vm = new Vue({
             el: '#form1',
             data: {
-                title: 'name',
-                tags: []
+                result: '',
+                form: {
+                    title: 'name',
+                    tags: []
+                }
             },
             methods: {
                 addTag: function(){
-                    this.tags.push({name: 'hitman'});
+                    this.form.tags.push({name: 'hitman'});
                 },
                 submit: function(){
-                    this.$http.post('form', JSON.stringify(this.$data));
+                    this.$http.post('form', JSON.stringify(this.form)).then((response)=>{
+                        this.result = response.json().title;
+                    });
                 }
             }
         });
