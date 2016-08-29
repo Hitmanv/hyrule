@@ -21,13 +21,12 @@
             </li>
             <li><a href="/dashboard"><i class="fa fa-home"></i> <span>总览</span></a></li>
             <li class="menu-list">
-                <a href=""><i class="fa fa-book"></i>  <span>文章管理</span></a>
+                <a href="#"><i class="fa fa-book"></i>  <span>一级分类</span></a>
                 <ul class="child-list">
-                    <li><a href="/articles">文章列表</a></li>
+                    <li><a href="#">二级分类</a></li>
                 </ul>
             </li>
         </ul>
         <!--sidebar nav end-->
-
     </div>
 </div>

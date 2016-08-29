@@ -12,15 +12,15 @@
 */
 
 
-Route::get('/', function(){
-    return view('welcome');
+
+
+Route::group(['middleware' => ['web'], 'namespace'=>'Www', 'domain'=>'www.exp.com'], function () {
+    Route::get('/', function(){
+        return view('welcome');
+    });
 });
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
-Route::group(['domain' => env('ADMIN_URL'), 'namespace'=>'Admin'], function(){
+Route::group(['domain' => env('ADMIN_URL', 'admin.exp.com'), 'namespace'=>'Admin'], function(){
     Route::get('/', function () {
         return view('admin.index');
     });
