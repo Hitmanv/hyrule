@@ -12,8 +12,6 @@
 */
 
 
-
-
 Route::group(['middleware' => ['web'], 'namespace'=>'Www', 'domain'=>'www.exp.com'], function () {
     Route::get('/', function(){
         return view('welcome');
@@ -21,7 +19,5 @@ Route::group(['middleware' => ['web'], 'namespace'=>'Www', 'domain'=>'www.exp.co
 });
 
 Route::group(['domain' => env('ADMIN_URL', 'admin.exp.com'), 'namespace'=>'Admin'], function(){
-    Route::get('/', function () {
-        return view('admin.index');
-    });
+    include __DIR__ . '/Routes/admin.template.php';
 });

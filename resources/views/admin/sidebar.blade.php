@@ -4,7 +4,7 @@
         <a href="/dashboard">
             <img src="img/logo-icon.png" alt="">
             <!--<i class="fa fa-maxcdn"></i>-->
-            <span class="brand-name">游小二</span>
+            <span class="brand-name">后台模板</span>
         </a>
     </div>
     <!--responsive view logo end-->
@@ -21,9 +21,9 @@
             </li>
             <li><a href="/dashboard"><i class="fa fa-home"></i> <span>总览</span></a></li>
             <li class="menu-list">
-                <a href="#"><i class="fa fa-book"></i>  <span>一级分类</span></a>
+                <a href="#"><i class="fa fa-book"></i>  <span>模板</span></a>
                 <ul class="child-list">
-                    <li><a href="#">二级分类</a></li>
+                    <li><a href="form">表单</a></li>
                 </ul>
             </li>
         </ul>
