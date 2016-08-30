@@ -20,4 +20,9 @@ class TemplatesController extends Controller
     {
         return response()->json($request->all());
     }
+
+    public function getRoute()
+    {
+        return view('admin.template.route');
+    }
 }

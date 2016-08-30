@@ -11,3 +11,5 @@ Route::get('/', function () {
 
 Route::get('form', 'TemplatesController@getForm');
 Route::post('form', 'TemplatesController@postForm');
+
+Route::get('route', 'TemplatesController@getRoute');
