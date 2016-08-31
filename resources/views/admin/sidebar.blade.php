@@ -2,7 +2,7 @@
     <!--responsive view logo start-->
     <div class="logo dark-logo-bg visible-xs-* visible-sm-*">
         <a href="/dashboard">
-            <img src="img/logo-icon.png" alt="">
+            <img src="#" alt="">
             <!--<i class="fa fa-maxcdn"></i>-->
             <span class="brand-name">后台模板</span>
         </a>
@@ -23,7 +23,8 @@
             <li class="menu-list">
                 <a href="#"><i class="fa fa-book"></i>  <span>模板</span></a>
                 <ul class="child-list">
-                    <li><a href="form">表单</a></li>
+                    <li><a href="form">嵌套表单</a></li>
+                    <li><a href="route">前端模板</a></li>
                 </ul>
             </li>
         </ul>

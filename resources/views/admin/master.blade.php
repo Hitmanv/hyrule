@@ -10,29 +10,7 @@
 
     <title>SlickLab - Responsive Admin Dashboard Template</title>
 
-    <!--easy pie chart-->
-    <link href="/slicklab/js/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
-
-    <!--vector maps -->
-    <link rel="stylesheet" href="/slicklab/js/vector-map/jquery-jvectormap-1.1.1.css">
-
-    <!--right slidebar-->
-    <link href="/slicklab/css/slidebars.css" rel="stylesheet">
-
-    <!--switchery-->
-    <link href="/slicklab/js/switchery/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
-
-    <!--jquery-ui-->
-    <link href="/slicklab/js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet" />
-
-    <link href="/slicklab/css/style.css" rel="stylesheet">
-    <link href="/slicklab/css/style-responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/slicklab/js/html5shiv.js"></script>
-    <script src="/slicklab/js/respond.min.js"></script>
-    <![endif]-->
+    <link href="/css/admin/vendor.css" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -103,14 +81,7 @@
 </section>
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="/slicklab/js/jquery-1.10.2.min.js"></script>
-<!--Nice Scroll-->
-<script src="/slicklab/js/jquery.nicescroll.js" type="text/javascript"></script>
-<!--right slidebar-->
-<script src="/slicklab/js/slidebars.min.js"></script>
-<!--common scripts for all pages-->
-<script src="/js/underscore-min.js"></script>
-<script src="/slicklab/js/scripts.js"></script>
+<script src="/js/admin/vendor.js"></script>
 
 @yield('script')
 

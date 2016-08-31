@@ -75,19 +75,6 @@ Author: Mosaddek Hossain
 
 */
 
-
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(//fonts.googleapis.com/css?family=Abel);
-
-@import url('bootstrap.min.css');
-@import url('bootstrap-reset.css');
-@import url('jquery-ui-1.10.3.css');
-@import url('font-awesome.css');
-@import url('simple-line-icons.css');
-@import url('icomoon-weather.css');
-@import url('default-theme.css');
-
-
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #323232;
