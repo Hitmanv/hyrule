@@ -35,5 +35,5 @@
 
 @section('script')
     <script src="https://cdn.jsdelivr.net/vue.router/0.7.10/vue-router.min.js"></script>
-    <script src="/js/template/vue-router.js"></script>
+    <script src="/js/admin/vue-router.js"></script>
 @endsection

@@ -1,10 +1,7 @@
-import Bar from "./view/test.vue";
-
 // 定义组件
-var Foo = Vue.extend({
-    template: '<p>This is foo!</p>'
-});
 
+import Foo from './view/foo.vue';
+import Bar from './view/bar.vue';
 
 var App = Vue.extend({});
 
@@ -18,6 +15,7 @@ router.map({
         component: Bar
     }
 });
+
 router.start(App, '#app');
 
 
