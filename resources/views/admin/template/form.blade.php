@@ -67,6 +67,7 @@
     <script src="/js/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/vue.resource/0.9.3/vue-resource.min.js"></script>
     <script>
+        Vue.http.headers.common['X-CSRF-TOKEN'] = $('#_token').attr('value');
         const vm = new Vue({
             el: '#form1',
             data: {
