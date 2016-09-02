@@ -1,8 +1,9 @@
-var elixir = require('laravel-elixir');
+const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vueify');
+require('laravel-elixir-vue');
 
-elixir(function(mix) {
+elixir(mix => {
+
     // 构建 slicklab 依赖
     //mix.styles(['slicklab/slidebars.css', 'slicklab/bootstrap.min.css',
     //    'slicklab/bootstrap-reset.css', 'slicklab/jquery-ui-1.10.3.css',
@@ -14,6 +15,6 @@ elixir(function(mix) {
     //    'slicklab/jquery.nicescroll.js', 'slicklab/slidebars.min.js', 'slicklab/scripts.js'],
     //    'public/js/slicklab.js');
 
-    //mix.browserify('admin/template/vue-router.js', 'public/js/admin/vue-router.js');
-
+    mix.sass('app.scss')
+        .webpack('app.js');
 });
