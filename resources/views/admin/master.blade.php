@@ -10,7 +10,7 @@
 
     <title>SlickLab - Responsive Admin Dashboard Template</title>
 
-    <link href="/css/admin/vendor.css" rel="stylesheet">
+    <link href="/css/slicklab.css" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -81,7 +81,7 @@
 </section>
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="/js/admin/vendor.js"></script>
+<script src="/js/slicklab.js"></script>
 
 @yield('script')
 
