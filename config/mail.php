@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'service@tonglei.cn', 'name' => 'Long1390'],
 
     /*
     |--------------------------------------------------------------------------
