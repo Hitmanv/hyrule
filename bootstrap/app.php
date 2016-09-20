@@ -41,6 +41,14 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->configureMonologUsing(function($monolog) {
+    $stream = new \Monolog\Handler\StreamHandler(storage_path('logs/test.log'));
+    $stream->setFormatter(new \Monolog\Formatter\LineFormatter());
+    $stream->setFormatter(new \Monolog\Formatter\LogstashFormatter('test'));
+    $monolog->pushHandler($stream);
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

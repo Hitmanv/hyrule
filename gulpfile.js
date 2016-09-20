@@ -15,6 +15,9 @@ elixir(mix => {
     //    'slicklab/jquery.nicescroll.js', 'slicklab/slidebars.min.js', 'slicklab/scripts.js'],
     //    'public/js/slicklab.js');
 
+    mix.scripts(['slicklab/select2.js', 'admin/template/elements.js'], 'public/js/admin/template/elements.js');
+    mix.styles(['slicklab/select2.css', 'slicklab/select2-bootstrap.css'], 'public/css/admin/template/elements.css');
+
     mix.sass('app.scss')
         .webpack('app.js');
 });

@@ -25,6 +25,7 @@
                 <ul class="child-list">
                     <li><a href="form">嵌套表单</a></li>
                     <li><a href="route">前端模板</a></li>
+                    <li><a href="upload">文件上传</a></li>
                 </ul>
             </li>
         </ul>

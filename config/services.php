@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'qiniu' => [
+        'access_key' => env('QN_ACCESS_KEY'),
+        'secret_key' => env('QN_SECRET_KEY'),
+    ],
+
 ];
