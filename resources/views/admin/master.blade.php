@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta id="_token" name="_token" value="{{ csrf_token() }}">
     <title>SlickLab - Responsive Admin Dashboard Template</title>
-    <link href="/css/slicklab.css" rel="stylesheet">
+    <link href="/slicklab/css/slicklab.css" rel="stylesheet">
     @yield('css')
 </head>
 
@@ -50,7 +50,7 @@
         </footer>
     </div>
 </section>
-<script src="/js/slicklab.js"></script>
+<script src="/slicklab/js/slicklab.js"></script>
 @yield('script')
 </body>
 </html>
