@@ -22,16 +22,12 @@ class MakeResource extends Command
         $nameZh = $this->ask("资源名称 中文");
 
         $this->createLocale($name, $nameZh);
-        $this->createTable($name);
         $this->createModel($name);
         $this->createRoute($name);
         $this->createController($name);
+        $this->createTable($name);
         $this->createView($name);
         $this->composerDump();
-        // 执行迁移文件
-        if($this->ask("是否执行 migrate? 0: 否 1: 是")){
-            $this->call('migrate');
-        }
     }
 
     private function createLocale($name, $nameZh)
