@@ -21,11 +21,27 @@
             </li>
             <li><a href="/dashboard"><i class="fa fa-home"></i> <span>总览</span></a></li>
             <li class="menu-list">
+                <a href="#"><i class="fa fa-book"></i>  <span>用户管理</span></a>
+                <ul class="child-list">
+                    <li><a href="/users">用户列表</a></li>
+                </ul>
+            </li>
+            <li class="menu-list">
+                <a href="#"><i class="fa fa-book"></i>  <span>资源管理</span></a>
+                <ul class="child-list">
+                    <?php
+                    $_resources = config('resource') ;
+                    $_resourcesSideBar = collect($_resources)->map(function($r){ $url = "/" . str_plural($r); return "<li><a href='{$url}'>{$r}管理</a></li>"; });
+                    ?>
+                    {!! $_resourcesSideBar->implode('') !!}
+                </ul>
+            </li>
+            <li class="menu-list">
                 <a href="#"><i class="fa fa-book"></i>  <span>模板</span></a>
                 <ul class="child-list">
-                    <li><a href="form">嵌套表单</a></li>
-                    <li><a href="route">前端模板</a></li>
-                    <li><a href="upload">文件上传</a></li>
+                    <li><a href="/form">嵌套表单</a></li>
+                    <li><a href="/route">前端模板</a></li>
+                    <li><a href="/upload">文件上传</a></li>
                 </ul>
             </li>
         </ul>

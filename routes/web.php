@@ -15,6 +15,7 @@ Route::group(['namespace'=>'Admin', 'domain'=>env('ADMIN_DOMAIN', 'admin.exp.com
     Route::get('/', function () {
         return view('admin.index');
     });
+
     Route::get('form', 'TemplatesController@getForm');
     Route::post('form', 'TemplatesController@postForm');
     Route::get('spinner', 'TemplatesController@getSpinner');
@@ -22,4 +23,17 @@ Route::group(['namespace'=>'Admin', 'domain'=>env('ADMIN_DOMAIN', 'admin.exp.com
     Route::post('upload', 'TemplatesController@postUpload');
     Route::get('route', 'TemplatesController@getRoute');
     Route::get('elements', 'TemplatesController@getElements');
+    Route::get('users', 'UsersController@index');
+
+    // 后台资源
+    $resources = config('resource');
+    foreach($resources as $resource){
+        Route::resource(str_plural($resource), studly_case(str_plural($resource)) . "Controller");
+    }
+
+    Route::group(['namespace'=>'Api', 'prefix'=>'api'], function() use ($resources){
+        foreach($resources as $resource){
+            Route::resource(str_plural($resource), studly_case(str_plural($resource)) . "Controller");
+        }
+    });
 });
