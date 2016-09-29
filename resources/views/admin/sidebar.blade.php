@@ -31,7 +31,11 @@
                 <ul class="child-list">
                     <?php
                     $_resources = config('resource') ;
-                    $_resourcesSideBar = collect($_resources)->map(function($r){ $url = "/" . str_plural($r); return "<li><a href='{$url}'>{$r}管理</a></li>"; });
+                    $_resourcesSideBar = collect($_resources)->map(function($r){
+                        $url = "/" . str_plural($r);
+                        $zh = trans('resource.' . $r);
+                        return "<li><a href='{$url}'>{$zh}管理</a></li>";
+                    });
                     ?>
                     {!! $_resourcesSideBar->implode('') !!}
                 </ul>

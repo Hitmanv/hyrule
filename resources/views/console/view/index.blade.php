@@ -1,11 +1,11 @@
 @@extends('admin.master')
 
 @@section('page-title')
-    {{ $name }}管理
+    {{ trans('resource.' . $name) }}管理
 @@endsection
 
 @@section('page-sub-title')
-    {{ $name }}列表
+    {{ trans('resource.' . $name) }}列表
 @@endsection
 
 
@@ -13,7 +13,7 @@
     <div class="wrapper">
         <div class="panel">
             <div class="panel-heading">
-                {{ $name }}列表
+                {{ trans('resource.' . $name) }}列表
                 <span class="tools pull-right"><a class="t-collapse fa fa-chevron-down" href="javascript:;"></a></span>
             </div>
             <div class="panel-body">

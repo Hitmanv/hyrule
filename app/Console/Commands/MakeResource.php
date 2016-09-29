@@ -18,17 +18,35 @@ class MakeResource extends Command
 
     public function handle()
     {
-        $name = $this->ask("资源名称: ");
+        $name   = $this->ask("资源名称 英文");
+        $nameZh = $this->ask("资源名称 中文");
+
+        $this->createLocale($name, $nameZh);
         $this->createTable($name);
         $this->createModel($name);
         $this->createRoute($name);
         $this->createController($name);
         $this->createView($name);
+        $this->composerDump();
+        // 执行迁移文件
+        if($this->ask("是否执行 migrate? 0: 否 1: 是")){
+            $this->call('migrate');
+        }
+    }
+
+    private function createLocale($name, $nameZh)
+    {
+        $resources = require resource_path('lang/zh/resource.php');
+        $resources[$name] = $nameZh;
+        $content = $this->phpView(view('console.locale', ['resources'=>$resources]));
+        file_put_contents(resource_path('lang/zh/resource.php'), $content);
+
+        $this->info("生成中文化文件...");
     }
 
     private function createTable($name)
     {
-        $filename = "create_table_" . str_plural($name) . ".php";
+        $filename = date('Y_m_d_His') . "_create_table_" . str_plural($name) . ".php";
         $path     = base_path('database/migrations') . "/" . $filename;
 
         $className = studly_case("create_table_" . str_plural($name));
@@ -97,5 +115,12 @@ class MakeResource extends Command
     private function phpView($view)
     {
         return "<?php \n\n" . $view;
+    }
+
+    private function composerDump()
+    {
+        $base = base_path();
+        $command = "cd {$base} && composer dump";
+        exec($command);
     }
 }

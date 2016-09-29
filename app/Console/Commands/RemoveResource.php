@@ -19,22 +19,18 @@ class RemoveResource extends Command
 
     public function handle()
     {
-        $name = $this->ask("资源名称: ");
-        $this->deleteTable($name);
+        $name = $this->ask("资源名称");
         $this->deleteModel($name);
         $this->deleteRoute($name);
         $this->deleteController($name);
         $this->deleteView($name);
+        $this->deleteTable($name);
     }
 
     private function deleteTable($name)
     {
-        $table = str_plural($name);
-        Schema::dropIfExists($table);
-        $filename = "create_table_" . str_plural($name) . ".php";
-        $path     = base_path('database/migrations') . "/" . $filename;
-        $this->unlink($path);
-        $this->info("删除迁移文件和数据库...");
+        Schema::dropIfExists(str_plural($name));
+        $this->error("迁移文件和数据库需要自行删除");
     }
 
     private function deleteModel($name)
@@ -79,7 +75,9 @@ class RemoveResource extends Command
         $this->unlink("{$dir}/show.blade.php");
         $this->unlink("{$dir}/create.blade.php");
         $this->unlink("{$dir}/edit.blade.php");
-        rmdir($dir);
+        if(is_dir($dir)){
+            rmdir($dir);
+        }
 
         $this->info('删除视图...');
     }
