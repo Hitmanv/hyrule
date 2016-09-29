@@ -30,9 +30,7 @@ class RemoveResource extends Command
     private function deleteTable($name)
     {
         $table = str_plural($name);
-        if(Schema::hasTable($table)){
-            Schema::drop($table);
-        }
+        Schema::dropIfExists($table);
         $filename = "create_table_" . str_plural($name) . ".php";
         $path     = base_path('database/migrations') . "/" . $filename;
         $this->unlink($path);
@@ -91,8 +89,9 @@ class RemoveResource extends Command
         return "<?php \n\n" . $view;
     }
 
-    private function unlink($path){
-        if(file_exists($path)){
+    private function unlink($path)
+    {
+        if (file_exists($path)) {
             unlink($path);
         }
     }
