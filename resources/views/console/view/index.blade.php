@@ -26,7 +26,7 @@
                     <tbody>
                     @@foreach(${{ str_plural($name) }} as ${{ $name }})
                          <tr>
-                             <td>${{ $name }}->id</td>
+                             <td><?php echo "{{ $" . $name . "->id }}";?></td>
                          </tr>
                     @@endforeach
                     </tbody>

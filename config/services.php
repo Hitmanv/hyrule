@@ -38,6 +38,7 @@ return [
     'qiniu' => [
         'access_key' => env('QN_ACCESS_KEY'),
         'secret_key' => env('QN_SECRET_KEY'),
+        'url'        => env('QN_URL'),
     ],
 
 ];

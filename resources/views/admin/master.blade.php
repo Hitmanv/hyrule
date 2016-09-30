@@ -50,7 +50,11 @@
         </footer>
     </div>
 </section>
+<script>
+    window.qiniu_domain = "{{ config('services.qiniu.url')}}";
+</script>
 <script src="/slicklab/js/slicklab.js"></script>
+<script src="/js/admin/init.js"></script>
 @yield('script')
 </body>
 </html>

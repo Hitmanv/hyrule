@@ -102,10 +102,26 @@ class MakeResource extends Command
         $indexContent = view('console.view.index', ['name'=>$name]);
         file_put_contents("{$dir}/index.blade.php", $indexContent);
         file_put_contents("{$dir}/show.blade.php", '');
-        file_put_contents("{$dir}/create.blade.php", '');
-        file_put_contents("{$dir}/edit.blade.php", '');
+        $this->generateCreateView($name);
+        $this->generateUpdateView($name);
 
         $this->info('视图创建成功');
+    }
+
+    private function generateCreateView($name)
+    {
+        $content = view('console.view.create', ['name' => $name]);
+        $path    = resource_path('views/admin/resource/' . $name);
+        $this->mkdir($path);
+        file_put_contents($path . "/create.blade.php", $content);
+    }
+
+    private function generateUpdateView($name)
+    {
+        $content = view('console.view.edit', ['name' => $name]);
+        $path    = resource_path('views/admin/resource/' . $name);
+        $this->mkdir($path);
+        file_put_contents($path . "/edit.blade.php", $content);
     }
 
     private function phpView($view)
@@ -118,5 +134,12 @@ class MakeResource extends Command
         $base = base_path();
         $command = "cd {$base} && composer dump";
         exec($command);
+    }
+
+    private function mkdir($path)
+    {
+        if(!is_dir($path)){
+            mkdir($path);
+        }
     }
 }
