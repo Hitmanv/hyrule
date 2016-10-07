@@ -13,8 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\MakeResource::class,
-        Commands\RemoveResource::class,
+//        Commands\MakeResource::class,
+//        Commands\RemoveResource::class,
     ];
 
     /**
