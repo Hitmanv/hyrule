@@ -13,7 +13,6 @@ class ResourceServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__ . "/routes.php";
         $this->loadViewsFrom(__DIR__.'/views/', 'resource');
     }
 
@@ -25,6 +24,10 @@ class ResourceServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('command.hitman.resource', 'Hitman\Resource\Commands\MakeResource');
+        $this->app->singleton('command.hitman.rm-resource', 'Hitman\Resource\Commands\RemoveResource');
+        $this->app->singleton('command.hitman.doc', 'Hitman\Resource\Commands\DocGenerator');
         $this->commands('command.hitman.resource');
+        $this->commands('command.hitman.rm-resource');
+        $this->commands('command.hitman.doc');
     }
 }

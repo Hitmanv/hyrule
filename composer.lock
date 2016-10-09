@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "185adf2a5eb09aa4df62a6833d54e873",
+    "content-hash": "946aab9c77ca56980a1b35fc40d50741",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -213,6 +213,39 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "hitman/resource",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Hitmanv/larap-resource.git",
+                "reference": "57f9d5e9853e13f99c25cd2132ab6edb411d1a13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/Hitmanv/larap-resource/57f9d5e9853e13f99c25cd2132ab6edb411d1a13.zip",
+                "reference": "57f9d5e9853e13f99c25cd2132ab6edb411d1a13",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hitman\\Resource\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "hitman",
+                    "email": "944594252@qq.com"
+                }
+            ],
+            "description": "resource generator",
+            "time": "2016-10-09 06:27:30"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3397,7 +3430,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "hitman/resource": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

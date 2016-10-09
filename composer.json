@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-debugbar": "^2.2",
-        "qiniu/php-sdk": "^7.0"
+        "qiniu/php-sdk": "^7.0",
+        "hitman/resource": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -23,8 +24,7 @@
             "app/Models"
         ],
         "psr-4": {
-            "App\\": "app/",
-            "Hitman\\Resource\\": "packages/hitman/resource/src/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

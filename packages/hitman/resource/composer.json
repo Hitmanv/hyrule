@@ -7,5 +7,11 @@
             "email": "944594252@qq.com"
         }
     ],
-    "require": {}
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hitman\\Resource\\": "src/"
+        }
+    }
 }
