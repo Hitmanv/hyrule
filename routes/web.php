@@ -5,9 +5,12 @@ Auth::routes();
 // web 应用
 Route::group(['namespace'=>'Www', 'domain'=>env('WWW_DOMAIN', 'www.exp.com')], function(){
     Route::get('/', function () {
-        return view('welcome');
+        return view('www.bootstrap');
     });
-    Route::get('/home', 'HomeController@index');
+    Route::get('/infinity-loading', function(){
+        return view('www.infinity_loading');
+    });
+
 });
 
 // 后台管理

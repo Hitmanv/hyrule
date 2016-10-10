@@ -21,10 +21,18 @@
                 <form method="post" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <div class="form-group">
-                        <label class="btn btn-primary">
-                            上传 <input type="file" class="hide" name="file" @change="upload">
-                        </label>
-                        {{--<button class="btn btn-success">提交</button>--}}
+                        <div class="input-group">
+                            <input type="text" placeholder="文件地址" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="button" id="upload">上传</button>
+                            </span>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="文件地址" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="button" id="upload2">上传</button>
+                            </span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -34,31 +42,32 @@
 
 @section('script')
     <script>
-        $(function(){
-            var vm = new Vue({
-                el: '#app',
-                data: {
-                    images: []
-                },
-                methods: {
-                    upload: function(event){
-                        var file = event.target.files[0];
-                        var formdata = new FormData;
-                        formdata.append('file', file);
-                        $.ajax({
-                            url: "/upload",
-                            method: 'post',
-                            data: formdata,
-                            processData: false,
-                            contentType: false,
-                            headers: {'X-XSRF-TOKEN': '{{ encrypt(csrf_token()) }}'},
-                            success: function (data) {
-                                console.log(data);
-                            }
-                        });
-                    }
+        function upload(id, domain, onUploaded, onError){
+            Qiniu.uploader({
+                runtimes: 'html5,flash,html4',
+                browse_button: id,
+                uptoken_url: '/uptoken',
+                unique_names: true,
+                get_new_uptoken: false,
+                domain: domain,
+                max_file_size: '100mb',
+                max_retries: 3,
+                chunk_size: '4mb',
+                auto_start: true,
+                init: {
+                    'FileUploaded': onUploaded,
+                    'Error': onError,
                 }
             });
+        }
+
+        $(function () {
+            upload('upload', 'hitman', function(up, file, info){
+                var res = JSON.parse(info);
+                var src = window.qiniu_domain + res.key;
+                console.log(src);
+            }, function(){});
+
         });
     </script>
 @endsection
