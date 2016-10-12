@@ -43,43 +43,9 @@
             <li class="menu-list">
                 <a href="#"><i class="fa fa-book"></i>  <span>模板</span></a>
                 <ul class="child-list">
-                    <li><a href="/form">嵌套表单</a></li>
-                    <li><a href="/route">前端模板</a></li>
                     <li><a href="/upload">文件上传</a></li>
                 </ul>
             </li>
-            <li class="menu-list">
-                <a href="#"><i class="fa fa-book"></i>  <span>工具</span></a>
-                <ul class="child-list">
-                    <li><a href="#" data-toggle="modal" data-target="#_upload">文件上传</a></li>
-                </ul>
-            </li>
         </ul>
-        <!--sidebar nav end-->
-        <div class="modal fade" id="_upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">上传文件</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>文件地址</label>
-                            <div class="input-group">
-                                <input type="text" placeholder="文件地址" class="form-control" id="_upload_url">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info copy" data-dismiss="modal" data-clipboard-target="#_upload_url" data-clipboard-action="cut">复制</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success" id="pickfiles">上传</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
